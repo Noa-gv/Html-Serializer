@@ -139,6 +139,12 @@ Selector rooti = Selector.selectorElement(search);
 List<HtmlElement> result = htmlTree.func1(rooti);
 Console.WriteLine("number = " + result.Count); // הדפסת מספר התוצאות שנמצאו
 
+// כאן מוסיפים את ההדפסה של התגיות שנמצאו
+foreach (var el in result)
+{
+    Console.WriteLine($"Element: <{el.Name}> | Id: {el.Id ?? "none"} | Classes: {(el.Classes.Count > 0 ? string.Join(", ", el.Classes) : "none")} | InnerHtml: {el.InnerHtml ?? "none"}");
+}
+
 // שיטות הרחבה לחיפוש רכיבי HTML
 public static class exmentionMetod
 {
